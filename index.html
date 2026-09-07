@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de formularios</title>
+</head>
+
+<body>
+    <h1>Sistema de gestión CBA</h1>
+
+    <h2>Registrar nuevo aprendiz</h2>
+
+    <form action="/guardar_registro" method="POST">
+        <fieldset>
+            <legend>Datos personales</legend>
+            <label for="documento">Documento de identidad:</label>
+            <input type="text" id="documento" name="documento" pattern="[0-9]{8,11}"
+                title="El documento debe contener entre 8 y 11 dígitos" required>
+            <br><br>
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre" pattern="[A-Za-z\s]{3,50}"
+                title="El nombre debe contener entre 3 y 50 caracteres alfabéticos" required>
+            <br><br>
+            <label for="correo">Correo institucional:</label>
+            <input type="email" id="correo" name="correo" required>
+            <br><br>
+            <label for="jornada">Jornada:</label>
+            <input type="radio" id="diurna" name="jornada" value="Diurna" required>
+            <label for="diurna">Diurna</label>
+
+            <input type="radio" id="nocturna" name="jornada" value="Nocturna" required>
+            <label for="nocturna">Nocturna</label>
+
+            <input type="radio" id="mixto" name="jornada" value="Mixto" required>
+            <label for="mixto">Mixto</label>
+            <br><br>
+        </fieldset>
+        <br><br>
+        <fieldset>
+            <legend>Asignación de equipo</legend>
+            <label for="equipo">Tipo de equipo:</label>
+            <select id="equipo" name="equipo" required>
+                <option value="">Seleccione un equipo</option>
+                <option value="laptop">Portátil</option>
+                <option value="tablet">Tableta</option>
+                <option value="desktop">Escritorio</option>
+            </select>
+            <br><br>
+            <input type="checkbox" id="terminos" name="terminos" required>
+            <label for="terminos">Acepto los términos y condiciones</label>
+            <br><br>
+            <button type="submit">registrar</button>
+        </fieldset>
+    </form>
+    <br>
+    <h1>Ultimos registros</h1>
+<table border="1">
+<thead>
+      
+    <tr>
+         <th>Documento</th>
+         <th>Nombre</th>
+         <th>Jornada</th>
+         <th>Equipo Asignado</th>
+    </tr>
+</thead>
+<tr>
+     <td>1020304050</td>
+     <td>Ana Martinez</td>
+     <td>Diurna</td>
+     <td>Portatil</td>
+</tr>
+<tr>
+     <td>987654321</td>
+     <td>Carlos Gomez</td>
+     <td>Nocturna</td>
+     <td>Equipo de Escritorio</td>
+</tr>
+
+</table>
+
+
+
+</body>
+
+</html>
